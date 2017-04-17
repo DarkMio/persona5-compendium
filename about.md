@@ -3,6 +3,7 @@ title: "About"
 anchor: "about"
 foot:
  - a link | http://google.com/
+ - and not a link
 ---
 
 # (GitHub-Flavored) Markdown Editor
