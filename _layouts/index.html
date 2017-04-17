@@ -1,0 +1,52 @@
+<!-- 
+    Thanks for checking out my source. It's chaotic and not maintained. Anyway, have an owl:
+
+         ,_, 
+        (o,o)
+        {`"'}
+        -"-"-
+
+-->
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{% include head.html %}
+
+<body>
+
+<div class="layout-transparent mdl-layout mdl-js-layout layout-transparent">
+    <div class="mdl-layout__content">
+        <div class="page-content">
+            <div class="preview-card-wide mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title projects" id="card-back">
+                    {% include header.html %}
+                </div>
+
+                <main class="mdl-layout__content mdl-tabs is-upgraded" id="main">
+                    {{ content }}
+
+                    {% for pg in site.pages %}
+                      {% if pg.anchor == null %}
+                        {% continue %}
+                      {% endif %}
+                        <section class="mdl-tabs__panel" id="{{ pg.anchor }}">
+                            <div class="mdl-card__supporting-text">
+                                {{ pg.content }}
+                            </div>
+                            {% if pg.foot != null %}
+                                <div class="mdl-card__actions mdl-card--border">
+                                    {% for footchunk in pg.foot %}
+                                    {% assign link = footchunk | split: ' | ' %}
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ link[1] }}">{{ link[0] }}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </section>
+                    {% endfor %}
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
