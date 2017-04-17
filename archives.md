@@ -1,7 +1,9 @@
 ---
 title: "Blog Archive"
 anchor: archives
-foot: this is a foot
+foot:
+ - foot without a link
+ - link | http://google.com
 ---
 
 ## Text

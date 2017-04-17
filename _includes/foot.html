@@ -1,0 +1,15 @@
+{% if include.foot != null %}
+<div class="mdl-card__actions mdl-card--border">
+    {% for footchunk in include.foot %}
+        {% assign link = footchunk | split: ' | ' %}
+        {% assign linkSize = link | size %}
+        {% if 2 == linkSize %}
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ link[1] }}">
+                {{ link[0] }}
+            </a>
+        {% else %}
+            <span class="mdl-button">{{ link[0] }}</span>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}

@@ -12,7 +12,6 @@
 {% include head.html %}
 
 <body>
-
 <div class="layout-transparent mdl-layout mdl-js-layout layout-transparent">
     <div class="mdl-layout__content">
         <div class="page-content">
@@ -24,24 +23,7 @@
                 <main class="mdl-layout__content mdl-tabs is-upgraded" id="main">
                     {{ content }}
 
-                    {% for pg in site.pages %}
-                      {% if pg.anchor == null %}
-                        {% continue %}
-                      {% endif %}
-                        <section class="mdl-tabs__panel" id="{{ pg.anchor }}">
-                            <div class="mdl-card__supporting-text">
-                                {{ pg.content }}
-                            </div>
-                            {% if pg.foot != null %}
-                                <div class="mdl-card__actions mdl-card--border">
-                                    {% for footchunk in pg.foot %}
-                                    {% assign link = footchunk | split: ' | ' %}
-                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ link[1] }}">{{ link[0] }}</a>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </section>
-                    {% endfor %}
+                    {% include pages.html %}
                 </main>
             </div>
         </div>

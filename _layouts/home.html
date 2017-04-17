@@ -4,7 +4,7 @@ layout: index
 ---
 <section class="mdl-tabs__panel is-active" id="home">
   <div class="mdl-card__supporting-text">
-    {% capture my_include %}{% include introduction.md %}{% endcapture %}
-    {{ my_include | markdownify }}
+    {% capture intro %}{% include introduction.md %}{% endcapture %}
+    {{ intro | markdownify }}
   <div class="mdl-card__supporting-text">
 </section>

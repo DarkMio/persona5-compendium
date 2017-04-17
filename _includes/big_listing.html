@@ -1,0 +1,24 @@
+{% if include.items != null %}
+<ul class="demo-list-three mdl-list">
+  {% for item in include.items %}
+  {% assign parts = item | split: " | " %}
+  <li class="mdl-list__item mdl-list__item--three-line">
+  {% if parts.size < 3 %}
+    This element is broken, format: <pre>icon | title | description</pre> - was: <pre>{{ item }}</pre>
+  {% else %}
+    <span class="mdl-list__item-primary-content height-fix">
+      <i class="material-icons material-icons-big mdl-list__item-avatar">
+        {{ parts[0] }}
+      </i>
+      <span class="link-like">{{ parts[1] }}</span>
+      <span class="mdl-list__item-text-body">
+        {{ parts[2] }}    
+      </span>
+    </span>
+  {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <h3>This listing (big_listing.html) is empty! Please fix or remove</h3>
+{% endif %}
