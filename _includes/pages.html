@@ -4,7 +4,7 @@
     {% endif %}
     <section class="mdl-tabs__panel" id="{{ pg.anchor }}">
         <div class="mdl-card__supporting-text">
-            {{ pg.content }}
+            {{ pg.content | markdownify }}
         </div>
         {% include foot.html foot=pg.foot title=pg.title %}
     </section>

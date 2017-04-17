@@ -85,6 +85,7 @@ th, td {
 
 .preview-card-wide > .mdl-card__title {
   align-items: flex-start;
+  background: url(img/error.jpg) center / cover;
 }
 .preview-card-wide > .mdl-card__title > h4 {
   margin-top: 0;
